@@ -27,10 +27,10 @@ def move(my_history, their_history, my_score, their_score):
     # Decide whether to return 'c' or 'b'.
     if len(my_history)==0:
          return 'c'
-    if 'b' in their_history[-10:]: # If the other player has betrayed within last 10 rounds, 
-        return 'b'
+    if their_history[-1] == 'c': # If the other player has betrayed within last 10 rounds, 
+        return 'c'
     else:
-        return 'c'         # but 90% of the time collude
+        return 'b'         # but 90% of the time collude
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
